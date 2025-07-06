@@ -1,4 +1,4 @@
-use clap::{CommandFactory, Parser};
+use clap::Parser;
 use colored::Colorize;
 use rand::seq::IndexedRandom;
 
@@ -74,5 +74,5 @@ fn choose_ramdomly(characters: &str, n: usize) -> String {
 
     let chars: Vec<char> = characters.chars().collect();
 
-    (0..n).map(|_| chars.choose(&mut rng)).flatten().collect()
+    (0..n).filter_map(|_| chars.choose(&mut rng)).collect()
 }
