@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cargo build -r
+
+cp target/release/password-generator $HOME/.local/bin
+
