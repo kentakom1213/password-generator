@@ -2,6 +2,8 @@ use clap::Parser;
 use colored::Colorize;
 use rand::seq::IndexedRandom;
 
+const SYMBOLS: &'static str = "!@#$%_-";
+
 /// Generates a password. By default, it uses a combination of uppercase letters, lowercase letters, and digits.
 #[derive(Debug, Parser)]
 #[command(version)]
@@ -10,17 +12,21 @@ struct Args {
     #[arg(short = 'n', long, default_value_t = 16)]
     length: usize,
 
-    /// do not use uppercase letters
+    /// do not use lowercase letters
     #[arg(short = 'l')]
     without_lowercase: bool,
 
-    /// do not use lowercase letters
+    /// do not use uppercase letters
     #[arg(short = 'u')]
     without_uppercase: bool,
 
     /// do not use digits
     #[arg(short = 'd')]
     without_digits: bool,
+
+    /// use symbols: !@#$%_-
+    #[arg(short = 's')]
+    with_symbols: bool,
 
     /// use additional characters to the default set
     #[arg(short = 'a')]
@@ -48,8 +54,12 @@ fn main() {
         characters.extend('0'..='9');
     }
 
+    if parser.with_symbols {
+        characters.push_str(SYMBOLS);
+    }
+
     if let Some(additional) = parser.additional_characters {
-        characters += &additional;
+        characters.push_str(&additional);
     }
 
     // replace characters
