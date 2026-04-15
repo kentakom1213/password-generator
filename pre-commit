@@ -3,9 +3,3 @@
 # バイナリを作成
 cargo build -r
 cp target/release/password-generator $HOME/.local/bin
-
-# wasmコンパイル
-cargo build -r --target wasm32-wasip1
-cp target/wasm32-wasip1/release/password-generator.wasm .
-sync
-git add password-generator.wasm
