@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# バイナリを作成
-cargo build -r
-cp target/release/password-generator $HOME/.local/bin
