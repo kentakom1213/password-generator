@@ -34,7 +34,7 @@ struct Args {
     #[arg(short = 'c')]
     custom_characters: Option<String>,
 
-    /// Separate into groups of 4 (If not specified, it defaults to '-')
+    /// Separate into groups of 4 (If not specified, it defaults to "-")
     #[arg(short = 'x')]
     separator: Option<Option<String>>,
 }
