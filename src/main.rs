@@ -2,7 +2,7 @@ use clap::Parser;
 use colored::Colorize;
 use rand::seq::IndexedRandom;
 
-const DEFAULT_SYMBOLS: &'static str = "!@#$%_-";
+const DEFAULT_SYMBOLS: &'static str = "!#$%&*+,-./:=?@^_";
 const DEFAULT_SEPARATOR: &str = "-";
 const GROUP_SIZE: usize = 4;
 
@@ -26,7 +26,7 @@ struct Args {
     #[arg(short = 'd')]
     without_digits: bool,
 
-    /// Use additional characters (If not specified, it defaults to "!@#$%_-")
+    /// Use additional characters (If not specified, it defaults to "!#$%&*+,-./:=?@^_")
     #[arg(short = 'a')]
     additional_characters: Option<Option<String>>,
 
