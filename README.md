@@ -30,7 +30,7 @@ password-generator [OPTIONS]
 
 | Option                       | Description                                            | Default                                       |
 | ---------------------------- | ------------------------------------------------------ | --------------------------------------------- |
-| `-n, --length <LENGTH>`      | Set the password length.                               | `16`                                          |
+| `-n, --length <LENGTH>`      | Set the password length.                               | `20`                                          |
 | `-l`                         | Do not use lowercase letters.                          | Enabled by default                            |
 | `-u`                         | Do not use uppercase letters.                          | Enabled by default                            |
 | `-d`                         | Do not use digits.                                     | Enabled by default                            |

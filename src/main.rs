@@ -11,7 +11,7 @@ const GROUP_SIZE: usize = 4;
 #[command(version)]
 struct Args {
     /// Length of password
-    #[arg(short = 'n', long, default_value_t = 16)]
+    #[arg(short = 'n', long, default_value_t = 20)]
     length: usize,
 
     /// Do not use lowercase letters
